@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+.pm_con1  p{ margin:0px;}
+#divMaincontent {
+    border: 1px solid #a00001;
+    color: #fff;
+    left: 25%;
+    position: fixed;
+    top: 30%;
+    width: 200px;
+    z-index: 100;
+}
+.hidden { display:none;}
+#alertContent {text-align:center;}
+
+.pm_tit1 {
+    background: none repeat scroll 0 0 #a00001;
+    font-size: 14px;
+    height: 20px;
+	line-height: 20px;
+    text-align: left;
+	padding-left:6px;
+	display:block;
+}
+
+.pm_con1 { background: none repeat scroll 0 0 #fff;}
+#alertContent {
+   
+    color: #a00001;
+    height: 40px;
+    padding-top: 10px;
+}

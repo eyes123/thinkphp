@@ -1,0 +1,79 @@
+/**@CHARSET "UTF-8";**/
+.tishi1{
+	background-image: url(../../../../images/mobile/tishi1.png);
+	background-repeat: no-repeat;
+	width: 200px;
+	height: 150px;
+	font-family: "微软雅黑";
+	color:#000;
+	text-align:center;
+    left: 50%;
+	margin-left:-100px;
+    position: fixed;
+    top: 30%;
+    z-index: 100;
+}
+
+#mess_mask {
+	filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;
+	height: 100%; 
+	z-index: 14000; 
+	position: absolute; 
+	text-align: center; 
+	top: 0px; left: 0px; right: 0px; bottom: 0px; 
+	width: 100%;
+	background-color: #555;
+}
+
+.wenxin{
+	font-size:18px;
+	font-weight:bold;
+	padding-top:25px;
+}
+.wenxin1{
+	padding-top:15px;
+	font-size:14px;
+}
+.tishi{
+	background-image: url(../../../../images/mobile/tishi.png);
+	background-repeat: no-repeat;
+	width:200px;
+	height:150px;
+	font-family: "微软雅黑";
+	color:#000;
+	text-align:center;
+	left: 50%;
+	margin-left:-100px;
+    position: fixed;
+    top: 30%;
+    z-index: 15000;
+}
+.wenxin2{
+	font-size:18px;
+	font-weight:bold;
+	padding-top:20px;
+}
+	
+.wenxin3{
+	font-size:13px;
+	padding-top:10px;
+}
+.wenxin4 span{
+	color:#168be5;
+	
+}
+.wenxin4 .haode{
+	position:absolute;
+	left:0px;
+	top:92px;
+}
+.wenxin4 .guangguang{
+	position:absolute;
+	left:100px;
+	top:92px;
+}
+
+.ts_shanchu{ display:block; width:40px; height:40px; position:absolute; right:0px; top:0px;}
+.wenxin4 span { width:95px;}
+.hidden { display:none;}
+

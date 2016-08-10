@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>广告系统后台管理 -- 编辑功能</title>
+    <import type="css" file="Css.common" />
+    <import type="css" file="Css.style" />
+<include file="./Application/Home/View/include/head.html" />
+<script>
+	var module = "__MODULE__";
+</script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		var message = '{$message}';
+		if(message!='')
+		{
+			showMessage(message);
+		}
+	});
+</script>
+</head>
+<body>
+<!-- 顶部页面导航 -->
+<include file="./Application/Home/View/topNav.html" title="功能管理" />
+
+<!-- 选项卡面板 -->
+<div class="tab-div">
+    
+	<div id="tabbody_div">
+    	<form action="" method="post">
+	    	<div class="line">
+			    <div class="input_left">功能名称：</div>
+			    <div class="input_right">
+			    	<input type="text" name="name" value="{$one.name}" maxlength="100"/>
+			    </div>
+			</div>
+			<div class="line">
+			    <div class="input_left">上一级：</div>
+			    <div class="input_right">
+			    	<select name="parent_id"> 
+				    	<option value="0">--请选择上一级--</option>
+				   		<foreach name="funcList" item="function">
+				   			<option value="{$function.id}" {$function['id'] == $one['parent_id'] ?'selected="selected"':''}>
+				   			{$function.name}
+                            </option>
+				   		</foreach>
+		    		</select>
+			    </div>
+			</div>
+			<div class="line">
+			    <div class="input_left">功能链接：</div>
+			    <div class="input_right">
+			    	<input type="text" name="path" value="{$one.path}" maxlength="255"/>
+			    </div>
+			</div>
+			<div class="line">
+			    <div class="input_left">排序：</div>
+			    <div class="input_right">
+			    	<input type="text" name="order_no" value="{$one.order_no}" maxlength="100"/>
+			    </div>
+			</div>
+			<div class="line">
+			    <div class="input_left">是否显示：</div>
+			    <div class="input_right">
+			    	<input type="radio" name="is_show" value="1" checked="checked"/>是
+					<input type="radio" name="is_show" value="0" {$one['is_show']==0 ?'checked="checked"':''} />否
+			    </div>
+			</div>
+			<div class="clear"></div>
+			<div class="submit"> 
+				<input value="保存" type="submit" name="btn_submit"/>
+			</div>
+			<br/>
+		</form>
+	</div>
+</div>
+</body>
+</html>

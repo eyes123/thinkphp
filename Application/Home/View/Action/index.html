@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理中心 -- 功能列表</title>
+<include file="./Application/Home/View/include/head.html" />
+<import type="css" file="Js.system.css.style_jct" />
+<import type="css" file="Js.artDialog.skins.default" />
+<import type="js" file="Js.artDialog.artDialog"/>
+<import type="js" file="Js.system.js.tree"/>
+<import type="css" file="Css.edit" />
+</head>
+<body>
+<!-- 顶部页面导航 -->
+<include file="./Application/Home/View/topNav.html" title="功能列表" />
+
+<div id="tree">
+  <form enctype="application/x-www-form-urlencoded" method="post" name="form1">
+    <input type="hidden" value="" name="hf_id" id="hf_id">
+    {$str}
+    <br/>
+    <div class="addroot">
+      <input type="button" value="" name="addroot" id="addroot"/>
+    </div>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+.tab-div {
+  margin: 0 0 50px 0;
+  padding: 1px;
+  text-align:left;
+  padding-bottom:100px;
+	
+}
+#tabbar-div {
+  background: #80BDCB;
+  padding-left: 10px;
+  height: 28px;
+  padding-top: 1px;
+}
+
+#tabbar-div p {
+	margin:0px;
+	margin-top:5px;
+}
+
+
+/**
+.tab_div {
+	margin-bottom:10px;
+	border: 2px solid #BBDDE5;
+}
+**/
+.tab-hover {
+  margin-left:-10px;
+  background: #94C9D3;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  border-right: 1px solid #FFF;
+  cursor: hand;
+  cursor: pointer;
+	
+}
+.tab-front {
+  margin-left:-10px;
+  background: #BBDDE5;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 4px 15px 4px 18px;
+  border-right: 2px solid #278296;
+  cursor: hand;
+  cursor: pointer;
+	
+}
+
+.tab-back {
+  margin:0px;
+  color: #FFF;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  border-right: 1px solid #FFF;
+  cursor: hand;
+  cursor: pointer;
+	
+}
+
+

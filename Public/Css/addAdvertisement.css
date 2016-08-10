@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+body {
+	text-align:center;
+}
+p,span {
+	margin:0px;
+	padding:0px;
+}
+#form_container {
+	margin:0px auto;
+	text-align:center;
+}
+.line {
+	width:800px;
+	text-align:center;
+	
+}
+.input_left {
+	margin-top:20px;
+	width:150px;
+	float:left;
+	text-align:right;
+	font-size:14px;
+}
+
+.inputqx{height:26px;
+         border:1px solid #f6cd97;
+		 display:block;
+		 width:224px;
+		 margin-top:6px;
+		 margin-left:5px;
+}
+
+.quanxuan,.buxuan{display:block;
+          float:left;
+		  width:111px;
+		  height:26px;
+		  border:none;
+		  margin-top:6px;
+		  margin-left:5px;
+}
+.quanxuan { background:url(../Js/system/img/allse.gif) no-repeat;}
+.buxuan{background:url(../Js/system/img/nose.gif) no-repeat;}
+.function_item{clear:both;padding:6px 0;}
+.function_menu0 input,.function_menu1 input {height:9px;margin:0px 3px;}
+.function_menu0 label,.function_menu1 label{line-height:20px; height:20px; font-size:14px;margin:0 2px;}
+
+.input_right {
+	margin-top:10px;
+	width:650px;
+	float:left;
+	text-align:left;
+}
+
+.button {
+	background:#f6cd97;	
+	line-height:20px;
+	width:60px;
+	border:none;
+}
+
+.require-field {
+	color: #FF0000;
+    font: 12px verdana;
+    margin-left: 1em;
+}
+.add_file_field {
+	cursor:pointer;
+}
+
+#add_img_span {
+	background: url(../images/uploadImg.jpg) repeat-x;
+	width:256px;
+	height:256px;
+	z-index:-1;
+}
+#input_file {
+	opacity:0;/*设置此控件透明度为零，即完全透明*/
+    filter:alpha(opacity=0);/*设置此控件透明度为零，即完全透明针对IE*/
+	width:256px;
+	height:256px;
+}
+
+a.special:link, a.special:visited {
+	display:block;
+	float:left;
+	color:#335B64;
+	font: 12px "sans-serif", "Arial", "Verdana";
+    margin: 0 5px;
+    padding: 1px 5px;
+    border: 1px solid #91C4D0;
+    border-right: 2px solid #278296;
+    border-bottom: 2px solid #278296;
+    background: #DDEEF2;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.fileInputContainer{
+        height:82px;
+        background:url(../images/uploadImg.png);
+        position:relative;
+        width: 81px;
+    }
+    .fileInput{
+        height:82px;
+    	width:82px;
+        overflow: hidden;
+        
+        opacity: 0;
+        filter:alpha(opacity=0);
+        cursor:pointer;
+    }
+.upload_img_item {
+	float:left;
+	margin-left:5px;
+	width:100px;
+	height:100px;
+	border:2px solid #e0e0e0;
+	background:#ffffff;
+}    
+.option { float:left; width:100%;}
+.myprice,.mynumber { width:90px;}
+.option a { margin-left:5px; cursor:pointer;}
+.line { float:left;}

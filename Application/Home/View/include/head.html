@@ -1,0 +1,22 @@
+
+<import type="css" file="Css.common" />
+
+<import type="css" file="Css.tab" />
+<import type="css" file="Css.addAdvertisement" />
+
+<import type="css" file="Js.diashow.skins.css.diashow" />
+<import type="js" file="Js.jquery-1#8#2#min"/>
+<import type="js" file="Js.diashow.diashow"/>
+<script type="text/javascript">
+
+	var module = "__MODULE__";
+	$(document).ready(function()
+	{
+		//alert(1);
+		var message = '{$message}';
+		if(message!='')
+		{
+			showMessage('{$message}','{$url}','{$time}');
+		}
+	});
+</script>

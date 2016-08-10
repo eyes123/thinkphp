@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>九橙通后台管理 -- 编辑权限</title>
+    <import type="css" file="Css.edit" />
+    <import type="css" file="Css.common" />
+    <import type="css" file="Css.tab" />
+    <import type="css" file="Css.addAdvertisement" />
+    <import type="css" file="Js.diashow.skins.css.diashow" />
+    <import type="js" file="Js.jquery-1#8#2#min"/>
+    <import type="js" file="Js.diashow.diashow"/>
+    <script type="text/javascript">
+        var module = "__MODULE__";
+        $(document).ready(function()
+        {
+            var message = '{$message}';
+            if(message!='')
+            {
+                showMessage('{$message}','{$url}','{$time}');
+            }
+        });
+
+        $(document).ready(function()
+        {
+            var function_menu = $(".function_menu0 input[name = 'function[]']");//菜单选择
+            var function_menu1 = $(".function_menu1 input[type = 'checkbox']");//子菜单选择
+            function_menu.click(function(){
+                checkBox(this);
+            });
+
+            function_menu1.click(function(){
+                var result = ($(this).attr('checked')=="checked")?true:false;
+                if(result)
+                {
+                    var parentPrev = $(this).parent(".function_menu1").prev();
+                    //alert(1);
+                    parentPrev.find("input[type = 'checkbox']").attr('checked',"checked");
+                    //alert(parent[0].innerHTML);
+                }
+            });
+
+            $("#quanxuan").click(function(){
+                var btns = $(".function_item input[type = 'checkbox']");//子菜单选择
+                btns.each(function(){
+                    $(this).attr('checked',"checked");
+                });
+            });
+
+            $("#fanxuan").click(function(){
+                var btns = $(".function_item input[type = 'checkbox']");//子菜单选择
+                var result = true;
+                btns.each(function(){
+                    result = ($(this).attr('checked')=="checked")?true:false;
+                    if(!result)
+                    {
+                        $(this).attr('checked',"checked");
+                    }
+                    else
+                    {
+                        $(this).removeAttr('checked');
+                    }
+                });
+            });
+        });
+
+        function checkBox(e)
+        {
+            var result = ($(e).attr('checked')=="checked")?true:false;
+            var nextBtns = $(e.parentNode).next().find("input[name = 'function[]']");
+            $(nextBtns).each(function(){
+                if(result)
+                {
+                    $(this).attr('checked',"checked");
+                }
+                else
+                {
+                    $(this).removeAttr('checked');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<!-- 顶部页面导航 -->
+<include file="./Application/Home/View/topNav.html" title="添加权限" />
+
+<!-- 选项卡面板 -->
+<div class="tab-div">
+    <div id="tabbody_div">
+        <form action="" method="post">
+            <div class="line">
+                <div class="input_left">权限名称：</div>
+                <div class="input_right">
+                    <input class="inputqx"type="text" name="pow_name" value="{$one.pow_name}" maxlength="100"/>
+                </div>
+            </div>
+            <div class="line">
+                <div class="input_left">分配权限：</div>
+                <div class="input_right">
+                    <input class="quanxuan" type="button" id="quanxuan" value="&nbsp;"/> <input class="buxuan"id="fanxuan" type="button" value="&nbsp;"/>
+                    <foreach name="functions" item="function" key="k">
+                        <div class="function_item">
+                            <div class="function_menu0">
+                                <input id="{$function.id}" name="function[]" type="checkbox" value="{$function.id}" {$ids[$function["id"]]}/><label for="{$function.id}">{$function.name}</label>
+                            </div>
+                            <div class="function_menu1">
+                                <foreach name="function.child_node" item="function1" key="k">
+                                    <input id="{$function1.id}" name="function[]" type="checkbox" value="{$function1.id}" {$ids[$function1["id"]]}/><label for="{$function1.id}">{$function1.name}</label>
+                                </foreach>
+                            </div>
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="submit">
+                <input value="&nbsp;" type="submit" name="btn_submit"/>
+            </div>
+            <br/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

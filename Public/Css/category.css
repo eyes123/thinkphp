@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+.form_div {
+	background: none repeat scroll 0 0 #F4FAFB;
+    border:none;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+table {
+	width:100%;
+	background: none repeat scroll 0 0 #F4FAFB;
+}
+td.label {
+    font-weight: bold;
+    padding: 4px 1em;
+	text-align:right;
+    vertical-align: top;
+    width:30%;
+	font-size:16px;
+	line-height:32px;
+	
+}
+td.labels {
+    font-weight: bold;
+    padding-top:14px;
+	margin-top:14px;
+    text-align: left;
+    vertical-align: top;
+    width: 30%;
+}
+
+.value {
+	text-align:left;
+}
+
+.value input,.value select{width:300px;}
+.province select { width:auto;}
+.radio input { width:auto;}

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>权限列表</title>
+    <import type="css" file="Css.common" />
+    <import type="css" file="Css.style" />
+<include file="./Application/Home/View/include/head.html" />
+
+<script type="text/javascript">
+  
+	//全选，全不选
+	var allSelect = function () 
+	{			
+        $("input[name='checkname[]']").each(function()
+		{
+			
+			if($(this).attr("checked") != "checked")
+			{
+                $(this).attr("checked", "checked");
+			}
+			else
+			{
+                $(this).removeAttr("checked");
+			}
+		});
+
+	}
+
+	//反选
+	function otherSelect() {
+	
+		$(":checkbox").each(function () {
+			if ($(this).attr("checked") == "checked") {
+				$(this).removeAttr("checked");
+			}
+			else {
+				$(this).attr("checked", "checked");
+			}
+		});
+	}
+	function delConfirm(url)
+	{
+		msg = "确定要删除？"
+		if(confirm(msg))
+		{
+			location.href=url;
+		}
+	}
+	
+</script>
+</head>
+<body>
+<!-- 顶部页面导航 -->
+<include file="./Application/Home/View/topNav.html" title="权限列表" />
+
+<!-- 列表样式     -->
+<form action="__MODULE__/action/pow_delete">
+	<input name="delIds" type="hidden"/>
+    <div class="data-list" >
+        <table cellspacing="1" cellpadding="3">
+        	<thead>
+        		<tr>
+        			<th><input type="checkbox" id="checkall" name="checkbox" onClick="allSelect()" value="全选" />编号</th>
+        			<th>权限名称</th>
+        			<th>操作</th>
+				</tr>
+			</thead>
+            <tbody>
+                <empty name="pows.list">		    
+			    <tr>
+                    <td class="no-records" colspan="4" style="background-color: rgb(244, 250, 251);">没有找到任何记录</td>
+                </tr> 
+	            <else />
+                <foreach name="pows.list" item="pow" key="k">
+	                <tr class="tr{$k%2}">
+				      	<td><input type="checkbox" id="Checkbox{$k}" name="checkname[]" value="{$pow.id}" />
+				      		{$pageCount*($currentPage-1)+$k+1}</td>
+				      	<td><a href="__MODULE__/action/pow_opt/pow_id/{$pow.id}">{$pow.pow_name}</a></td>
+				      	<td>
+					      <a onclick="delConfirm('__MODULE__/action/pow_delete?pow_id={$pow.id}')">
+					      <img src="__PUBLIC__/images/icon_del.gif" />
+					      </a>
+					      <a href="__MODULE__/action/pow_opt?pow_id={$pow.id}" >
+					      <img src="__PUBLIC__/images/icon_edit.gif" />
+					      </a>
+					  	</td>
+				    </tr>     
+                </foreach>
+                <tr><td></td><td colspan="3">{$pows.page}</td></tr>
+                </empty>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <input class="button" type="submit" value="删除" onclick="return deleteData('checkname[]',this)"/>
+    </div>
+</form>
+</body>
+</html>

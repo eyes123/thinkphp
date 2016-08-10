@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>左侧菜单</title>
+<import type="css" file="Css.style" />
+<import type="js" file="Js.Jquery" />
+</head>
+<body>
+<script type="text/javascript">
+    $(function(){
+//导航切换
+        $(".menuson li").click(function(){
+            $(".menuson li.active").removeClass("active")
+            $(this).addClass("active");
+            var href = $("a",this).attr("href");
+            var frame = window.parent.frames["rightFrame"];
+            $(frame).attr('src',href);
+            frame.location = href;
+            return false;
+        });
+        $('.title').click(function(){
+            var $ul = $(this).next('ul');
+            $('dd').find('ul').slideUp();
+            if($ul.is(':visible')){
+                $(this).next('ul').slideUp();
+            }
+            else{
+                $(this).next('ul').slideDown();
+            }
+        });
+    })
+</script>
+    <div class="lefttop"><span></span>管理菜单</div>
+    <dl class="leftmenu">
+		<foreach name="menuList" item="one">
+            <dd>
+                <div class="title">
+                    <span><img src="__PUBLIC__/images/{$one.func_type}.png" /></span>{$one.name}
+                </div>
+
+                <ul class="menuson">
+                    <foreach name="one.child_node" item="function">
+                        <li><cite></cite><a href="__ROOT__/{$function.path}"   target="rightFrame" >{$function.name}</a><i></i></li>
+                    </foreach>
+                </ul>
+            </dd>
+		</foreach>
+        </dl>
+</body>
+</html>
